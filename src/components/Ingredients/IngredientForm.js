@@ -4,7 +4,12 @@ import Card from "../UI/Card";
 import "./IngredientForm.css";
 
 const IngredientForm = React.memo((props) => {
- //01
+  const [title, setTitle] = useState("");
+  const [amount, setAmount] = useState("");
+  const submitHandler = (event) => {
+    event.preventDefault();
+    props.onAddIngredient({title:title,amount:amount})
+  };
 
   return (
     <section className="ingredient-form">
